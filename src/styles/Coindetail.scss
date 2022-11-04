@@ -1,0 +1,144 @@
+.coindetails {
+  margin: 1% 5%;
+  width: auto;
+  .chart {
+    width: 100%;
+    padding: 1%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .buttons {
+    margin: 2%;
+    button {
+      // border: 2px solid black;
+      background-color: rgb(226, 232, 240);
+      font-weight: 500;
+      border-radius: 6px;
+      min-width: 3rem;
+      padding: 0.4rem;
+      margin: 0.3rem;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .alldetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    min-height: 100vh;
+
+    > form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-size: 1.3rem;
+      > input {
+        padding: 0.6rem;
+      }
+      > label {
+        padding: 0.8rem;
+      }
+    }
+    > .upper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      > p {
+        margin: 1rem 0;
+        width: 100%;
+        font-size: 0.85rem;
+        font-weight: 300;
+        text-align: center;
+      }
+      > img {
+        width: 3.5rem;
+        margin: 1rem 0;
+      }
+      > h3 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        padding: 0.2rem 0;
+      }
+      > h1 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 0 0 0.2rem 0;
+      }
+      > span {
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 1.3rem;
+        padding: 0.2rem 0.5rem;
+        font-weight: 600;
+        margin: 1rem 0 0.5rem 0;
+      }
+    }
+    > .mid {
+      width: 100%;
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      .progress {
+        width: 100%;
+        background-color: rgb(237, 242, 247);
+        height: 0.8rem;
+
+        > div {
+          width: 50%;
+          background-color: rgb(49, 151, 149);
+          height: 0.8rem;
+        }
+      }
+      > .pdetails {
+        margin: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+
+        > .low,
+        .high {
+          font-size: 0.8rem;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          height: fit-content;
+          padding: 0;
+          font-weight: 500;
+        }
+        > .low {
+          background-color: rgb(254, 215, 215);
+          color: rgb(130, 39, 39);
+        }
+        > .high {
+          background-color: rgb(198, 246, 213);
+          color: rgb(34, 84, 61);
+        }
+      }
+    }
+    > .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      > div {
+        width: 100%;
+        margin: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > .bold {
+          font-weight: 600;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+            'Lucida Sans', Arial, sans-serif;
+        }
+      }
+    }
+  }
+}
