@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <nav>
-      <Link to="/">BLACK MARKET</Link>
+      <Link to="/">X-Crypto</Link>
       <div>
         <Link to="/">Home</Link>
         <Link to="/exchanges">Exchanges</Link>
