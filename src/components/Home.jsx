@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="home">
       <img src={img1} alt="" />
-      <p>BLACK MARKET</p>
+      <p>X-Crypto</p>
     </div>
   );
 };
