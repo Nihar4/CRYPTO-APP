@@ -16,6 +16,15 @@ const Coindetail = () => {
   const [currency, setCurrency] = useState('inr');
   const [days, setdays] = useState('1');
   const [chartarr, setchartarr] = useState([]);
+
+  const apiKey = 'CG-cEmEzDyFYttiYvqBpQVCwPh1';
+
+  const config = {
+    headers: {
+      'x-cg-demo-api-key': apiKey,
+    },
+  };
+
   let [disable, setdisable] = useState([
     true,
     false,
@@ -29,7 +38,7 @@ const Coindetail = () => {
 
   const params = useParams();
 
-  const btns = ['24h', '7d', '14d', '30d', '60d', '200d', '1y', 'max'];
+  const btns = ['24h', '7d', '14d', '30d', '60d', '200d', '1y'];
   const change = e => {
     let currs = document.querySelectorAll('.curr');
     for (let i = 0; i < currs.length; i++) {
@@ -42,15 +51,20 @@ const Coindetail = () => {
   useEffect(() => {
     const fetchCoin = async () => {
       try {
-        const { data } = await axios.get(`${server}/coins/${params.id}`);
+        const { data } = await axios.get(
+          `${server}/coins/${params.id}`,
+          config
+        );
         const { data: chartdata } = await axios.get(
-          `${server}/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days}`
+          `${server}/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days}`,
+          config
         );
         setCoin(data);
         setchartarr(chartdata.prices);
         setLoading(false);
         setError(false);
       } catch (error) {
+        console.log(error);
         setLoading(false);
         setError(true);
       }

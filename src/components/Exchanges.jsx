@@ -8,10 +8,19 @@ const Exchanges = () => {
   const [exchanges, setExchange] = useState([]);
   const [loading, setLoading] = useState(true);
   const [Error, setError] = useState(false);
+
+  const apiKey = 'CG-cEmEzDyFYttiYvqBpQVCwPh1';
+
+  const config = {
+    headers: {
+      'x-cg-demo-api-key': apiKey,
+    },
+  };
+
   useEffect(() => {
     const fetchExchanges = async () => {
       try {
-        const { data } = await axios.get(`${server}/exchanges`);
+        const { data } = await axios.get(`${server}/exchanges`, config);
         setExchange(data);
         setLoading(false);
         setError(false);

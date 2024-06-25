@@ -15,6 +15,14 @@ const Coins = () => {
   const [page, setPage] = useState(1);
   const arr = new Array(132).fill(1);
 
+  const apiKey = 'CG-cEmEzDyFYttiYvqBpQVCwPh1';
+
+  const config = {
+    headers: {
+      'x-cg-demo-api-key': apiKey,
+    },
+  };
+
   const changepage = index => {
     setPage(index);
     setLoading(true);
@@ -32,7 +40,8 @@ const Coins = () => {
     const fetchCoins = async () => {
       try {
         const { data } = await axios.get(
-          `${server}/coins/markets?vs_currency=${currency}&page=${page}`
+          `${server}/coins/markets?vs_currency=${currency}&page=${page}`,
+          config
         );
         setCoins(data);
         setLoading(false);
